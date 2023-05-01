@@ -1,5 +1,7 @@
 # Backend en python django.
 El proyecto es un crud con djando como backend en python y react como fronted.
+./client/ npm run dev
+./python manage.py runserver
 
 # Lista de comandos
 conda create -n crud
@@ -78,4 +80,39 @@ Esto Django lo hace por nosotros pero debemos seleccionar los campos son para po
 Datos del modelo: JSON --> Serealizado en objetos --> datos complejo Django para esto creamos el archivo "serealizer.py"
 
 
+----
+documentar api con el modulo COREAPI
+conda install coreapi
+
+se agrega a settins
+coreapi
+
+y este codigo
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
+----
+
+Creacion de fronted con react y vite que es lo mas recomendado actualmente.
+
+Para esto se necesita una version de node > 16
+npm create vite --> se puso de nombre client y crea la carpeta con el nombre del proyecto "client"
+luego se piden algunas cosas donde se eligio --> react y Javascript
+
+se ejecutan estos comandos:
+cd client
+npm install
+npm run dev
+
+Luego que la web base levanto instalamos lo siguiente:
+npm i react-router-dom react-hot-toast axios react-hook-form
+
+explicacion de cada modulo:
+react-router-dom: para el manejo de multiples paginas en el frontend
+react-hot-toast: para tener mensajes cuando se elimina o crea algo, para mostrar interaccion tipo alert
+axios: para realizar peticiones, si bien el navegador tiene default fetch axios maneja menor los headers y es mas practico y utilizado en produccion.
+
+react-hook-form: para validar input en el frontend, si el dato esta vacio de un error.
 
